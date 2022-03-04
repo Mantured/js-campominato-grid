@@ -12,13 +12,54 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 
 /*
 
-*       =>Come prima cosa devo stabilire l'imput con la quale l'utente fa un select della difficoltà
+*       => Come prima cosa devo stabilire l'imput con la quale l'utente fa un select della difficoltà
 *           anche se come prima cosa sarebbe meglio puntare alle varie function
 *       => intanto cerchiamo di dare una const al parent che contiene/conterrà i quadrati
 *
 
 */
 
+ // dove andrò ad aggiungere gli square con un appenChild
+// devo generare dei numeri che  vanno da
+//    -> 1 a 100
+//    -> 1 a 81 (80 numeri)
+//    -> 1 a 49 (48 numeri)
+
+//ciclo for o while tanto è molto simile
+/* for (let i = 1; i <= 100; i++) {
+    console.log(i);
+    createGridSquare(i);
+    console.log(createGridSquare(i));
+}
+*/
+
 // variabile const che mi prende l'elemento del DOM
 
-const squareContainer = document.getElementById('square-container'); // dove andrò ad aggiungere gli square con un appenChild
+
+/* for (let i = 1; i <= 49; i++) {
+    console.log(i);
+} */
+
+const squareContainer = document.getElementById('square-container');
+const createGridSquare = (number) => {
+    const gridElement = document.createElement('div');
+    gridElement.classList.add('square');
+    gridElement.innerHTML = `
+    <span>${number}</span>`;
+    return gridElement;
+}
+
+
+let i = 1
+while (i <= 81) {
+
+
+    const activeSquare = createGridSquare(i);
+    activeSquare.addEventListener('click', function () {
+        console.log(this);
+        this.classList.add('clicked');
+    })
+    squareContainer.appendChild(activeSquare)
+    i++;
+}
+
