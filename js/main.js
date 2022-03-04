@@ -1,22 +1,8 @@
-/* L'utente indica un livello di difficoltà in base al quale viene generata una griglia di gioco quadrata, in cui ogni cella contiene un numero tra quelli compresi in un range:
-con difficoltà 1 => tra 1 e 100
-con difficoltà 2 => tra 1 e 81
-con difficoltà 3 => tra 1 e 49
-Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro.
-Consigli del giorno: :party_wizard:
-Scriviamo prima cosa vogliamo fare passo passo in italiano, dividiamo il lavoro in micro problemi.
-Ad esempio:  di cosa ho bisogno per generare i numeri?
-Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
-Le validazioni e i controlli possiamo farli anche in un secondo momento.
- */
-
 /*
-
 *       => Come prima cosa devo stabilire l'imput con la quale l'utente fa un select della difficoltà
 *           anche se come prima cosa sarebbe meglio puntare alle varie function
 *       => intanto cerchiamo di dare una const al parent che contiene/conterrà i quadrati
 *
-
 */
 
  // dove andrò ad aggiungere gli square con un appenChild
@@ -34,32 +20,69 @@ Le validazioni e i controlli possiamo farli anche in un secondo momento.
 */
 
 // variabile const che mi prende l'elemento del DOM
-
-
 /* for (let i = 1; i <= 49; i++) {
     console.log(i);
 } */
+//devo crearmi una costante che mi salvi/prenda l'input del select
 
-const squareContainer = document.getElementById('square-container');
+
+
+let difficult = document.querySelector('#difficult').value;
+console.log(difficult)
+
 const createGridSquare = (number) => {
     const gridElement = document.createElement('div');
     gridElement.classList.add('square');
     gridElement.innerHTML = `
     <span>${number}</span>`;
+
+
     return gridElement;
 }
 
-
-let i = 1
-while (i <= 81) {
-
-
+/**
+ *
+ * @param {*} number value of square printed on DOM (100 - 81 - 49 )
+ */
+function generateSquareWithNumber(number) {
+    let squareContainer = document.getElementById('square-container');
+    let i = 1;
+while (i <= number) {
     const activeSquare = createGridSquare(i);
     activeSquare.addEventListener('click', function () {
-        console.log(this);
-        this.classList.add('clicked');
-    })
-    squareContainer.appendChild(activeSquare)
+        this.classList.toggle('clicked');
+    });
+    squareContainer.appendChild(activeSquare);
     i++;
+    }
 }
+
+const chooseDifficult = (value) => {
+    let square = document.querySelector('.square');
+    if (value == 1) {
+        generateSquareWithNumber(100);
+    } else if (value == 2) {
+        generateSquareWithNumber(81);
+    } else {
+        generateSquareWithNumber(49);
+    }
+}
+
+chooseDifficult(difficult);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
