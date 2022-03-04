@@ -1,0 +1,38 @@
+#main-box {
+	height: 100vh;
+	width: 100%;
+	background-color: rgb(127, 255, 212);
+	display: flex;
+	align-items: center;
+}
+
+#my-grid {
+	background-color: blue;
+	/* 	height: 700px;
+	width: 700px; */
+}
+
+#square-container {
+	height: 80vh;
+}
+
+.square {
+	height: calc(100% / 10);
+	width: calc(100% / 10);
+	background-color: azure;
+	border: 3px solid black;
+	cursor: grabbing;
+	text-align: center;
+	/* 	line-height: 100px; */
+}
+
+.square.clicked {
+	background-color: aqua;
+}
+
+.square > span {
+	display: none;
+}
+.square.clicked > span {
+	display: block;
+}
