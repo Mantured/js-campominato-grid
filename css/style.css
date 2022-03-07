@@ -1,5 +1,5 @@
 #main-box {
-	height: 95vh;
+	height: 90vh;
 	width: 100%;
 	background-color: rgb(127, 255, 212);
 	display: flex;
@@ -8,21 +8,20 @@
 
 #my-grid {
 	background-color: blue;
-	/* 	height: 700px;
-	width: 700px; */
 }
 
 #square-container {
-	height: 75vh;
+	width: 80vw;
 }
 
 .square {
-	height: calc(100% / 10);
+	height: 80px;
 	width: calc(100% / 10);
 	background-color: azure;
 	border: 3px solid black;
-	cursor: grabbing;
+	cursor: pointer;
 	text-align: center;
+	line-height: 80px;
 }
 
 .square.clicked {
@@ -36,7 +35,7 @@
 	display: block;
 }
 
-.square.easy {
+/* .square.easy {
 	height: calc(100% / 10);
 	width: calc(100% / 10);
 }
@@ -50,3 +49,4 @@
 	height: calc(100% / 7);
 	width: calc(100% / 7);
 }
+ */

@@ -26,17 +26,11 @@
 //devo crearmi una costante che mi salvi/prenda l'input del select
 
 
-
-let difficult = document.querySelector('#difficult').value;
-console.log(difficult)
-
 const createGridSquare = (number) => {
     const gridElement = document.createElement('div');
     gridElement.classList.add('square');
     gridElement.innerHTML = `
     <span>${number}</span>`;
-
-
     return gridElement;
 }
 
@@ -57,8 +51,12 @@ while (i <= number) {
     }
 }
 
+/**
+ *
+ * @param {*} value is argoument taken from user input variable difficult
+ */
+
 const chooseDifficult = (value) => {
-    let square = document.querySelector('.square');
     if (value == 1) {
         generateSquareWithNumber(100);
     } else if (value == 2) {
@@ -67,8 +65,12 @@ const chooseDifficult = (value) => {
         generateSquareWithNumber(49);
     }
 }
+let difficult = document.querySelector('#difficult').value;
+/* chooseDifficult(difficult); */
 
-chooseDifficult(difficult);
+document.querySelector('#my-play').addEventListener('click', function () {
+    chooseDifficult(difficult)
+});
 
 
 

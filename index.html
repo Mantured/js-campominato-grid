@@ -17,20 +17,29 @@
 </head>
 <body>
     <header>
-        <select class="form-select" id="difficult" aria-label="choose the difficulty">
-            <option value = 1>Easy</option>
-            <option value = 2>Medium</option>
-            <option value = 3>Asian</option>
-        </select>
+        <div class="container">
+            <div class="row m-3 justify-content-center" >
+                <div class="col">
+                    <select class="form-select " id="difficult" aria-label="choose the difficulty">
+                        <option value = 1>Easy</option>
+                        <option value = 2>Medium</option>
+                        <option value = 3>Asian</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-dark" id="my-play">Play</button>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         <section id="main-box">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col">
                         <div id="my-grid">
                             <div class="row">
-                                <div class="col d-flex flex-row flex-wrap" id="square-container">
+                                <div class="col d-flex flex-row flex-wrap justify-content-center" id="square-container">
                                 </div>
                             </div>
                         </div>
