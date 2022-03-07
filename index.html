@@ -17,36 +17,25 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="row m-3 justify-content-center" >
-                <div class="col">
-                    <select class="form-select " id="difficult" aria-label="choose the difficulty">
-                        <option value = 1>Easy</option>
-                        <option value = 2>Medium</option>
-                        <option value = 3>Asian</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <button class="btn btn-dark" id="my-play">Play</button>
-                </div>
+        <section class="container" id="header-container">
+            <div class="header-start">
+                <img src="img/logo copia.png" alt="boolean logo icon">
+                <h1>Mine Sweeper</h1>
             </div>
-        </div>
-    </header>
-    <main>
-        <section id="main-box">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <div id="my-grid">
-                            <div class="row">
-                                <div class="col d-flex flex-row flex-wrap justify-content-center" id="square-container">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="header-end">
+                <label for="level">Level:
+                    <select name="level" id="level">
+                        <option value="1" selected>Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Asian</option>
+                    </select>
+                </label>
+                <button type="button" class="btn btn-warning" id="play">Play!</button>
             </div>
         </section>
+    </header>
+    <main>
+        <section id="grid"></section>
     </main>
     <footer>
 
